@@ -96,12 +96,6 @@ closeBtn.onclick = function () {
   modal.classList.remove("active");
 };
 
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.classList.remove("active");
-  }
-};
-
 // 5. EMAILJS FORM SUBMISSION
 joinForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -134,12 +128,35 @@ joinForm.addEventListener("submit", function (e) {
     });
 });
 
-
+// 6. HAMBURGER MENU & WINDOW CLICK LOGIC
 const menuToggle = document.getElementById("menuToggle");
 const navMenu = document.getElementById("navMenu");
 
-if (menuToggle) {
-  menuToggle.addEventListener("click", () => {
+if (menuToggle && navMenu) {
+  // Toggle Menu Open/Close
+  menuToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
     navMenu.classList.toggle("active");
   });
+
+  // Link click karne par menu band kar dein
+  const navLinks = navMenu.querySelectorAll("a");
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active");
+    });
+  });
 }
+
+// Global Window Click Event (Modal + Nav Menu Close)
+window.onclick = function (event) {
+  // Close Modal on outside click
+  if (event.target == modal) {
+    modal.classList.remove("active");
+  }
+  
+  // Close Navbar on outside click in mobile view
+  if (navMenu && navMenu.classList.contains("active") && !navMenu.contains(event.target) && event.target !== menuToggle) {
+    navMenu.classList.remove("active");
+  }
+};
