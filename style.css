@@ -281,43 +281,81 @@ footer {
   color: #ff3c00;
   font-size: 28px;
   cursor: pointer;
+  z-index: 1002;
 }
 
 @media(max-width: 768px) {
   .hero h2 {
     font-size: 32px;
   }
+  /* header, .navbar{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+  } */
 
   .menu-toggle {
-    display: block;
+    display: inline-block !important;
+    position: relative;
+    z-index: 10002; 
+    background: transparent;
+    border: none;
+    color: #ff3c00;
+    font-size: 28px;
+    /* padding: 6px 14px;
+    border-radius: 5px; */
+    cursor: pointer;
   }
 
   nav {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background: #1c1c1c;
-    position: absolute;
-    top: 100%;
+    display: flex !important;
+    position: fixed !important;
+    top: 0;
     left: 0;
-    padding: 20px 0;
-    border-bottom: 2px solid #ff3c00;
-    box-shadow: 0px 10px 15px rgba(0,0,0,0.5);
-    z-index: 1001;
+    width: 25%;
+    height: 50vh;
+    background-color: transparent !important; /* Solid Dark Background */
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+    z-index: 10001;
+    padding: 80px 30px 30px 30px;
+    /* Initially Hidden Off-Screen */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease-in-out;
   }
 
   /* JavaScript is class ko toggle karega */
-  nav.active, nav.show-menu {
-    display: flex !important;
+  nav.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    /* display: flex !important; */
   }
 
   nav a {
-    margin: 12px 0;
-    font-size: 16px;
+    /* margin: 12px 0; */
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    width: 100%;
+    text-align: left;
+  }
+  nav a:hover{
+    /* color: #ff3c00; */
   }
 
   .logout-btn {
-    margin-left: 0 !important;
-    margin-top: 10px;
+    margin: 10px 0 0 0 !important;
+    padding: 10px 30px !important;
+    font-size: 16px !important;
+    align-self: flex-start;
   }
 }
