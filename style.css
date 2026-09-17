@@ -297,15 +297,15 @@ footer {
   } */
 
   .menu-toggle {
-    display: inline-block !important;
+    display: block !important;
     position: relative;
     z-index: 10002; 
     background: transparent;
     border: none;
     color: #ff3c00;
     font-size: 28px;
-    /* padding: 6px 14px;
-    border-radius: 5px; */
+    padding: 6px 14px;
+    border-radius: 5px;
     cursor: pointer;
   }
 
@@ -346,7 +346,7 @@ footer {
     text-decoration: none;
     transition: color 0.2s ease;
     width: 100%;
-    text-align: left;
+    text-align: center;
   }
   nav a:hover{
     /* color: #ff3c00; */
@@ -356,6 +356,7 @@ footer {
     margin: 10px 0 0 0 !important;
     padding: 10px 30px !important;
     font-size: 16px !important;
-    align-self: flex-start;
+    align-self: center;
+    /* text-align: center; */
   }
 }
