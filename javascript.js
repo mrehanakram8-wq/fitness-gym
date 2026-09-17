@@ -1,65 +1,3 @@
-// // EmailJS Initialization
-// (function () {
-//   emailjs.init("_BrC7wu4_hA-vmC5C");
-// })();
-
-// // DOM Elements
-// const modal = document.getElementById("modal");
-// const joinBtn = document.getElementById("joinBtn");
-// const closeBtn = document.getElementById("closeBtn");
-// const joinForm = document.getElementById("joinForm");
-
-// // 1. Open Modal when "Join Now" is clicked
-// joinBtn.onclick = function (e) {
-//   e.preventDefault();
-//   modal.style.display = "flex";
-// };
-
-// // 2. Close Modal when 'x' is clicked
-// closeBtn.onclick = function () {
-//   modal.style.display = "none";
-// };
-
-// // 3. Close Modal when clicking outside the box
-// window.onclick = function (event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// };
-
-
-// joinForm.addEventListener("submit", function (e) {
-//   e.preventDefault();
-
-//   const submitBtn = document.getElementById("submitBtn");
-//   submitBtn.innerText = "Sending...";
-//   submitBtn.disabled = true;
-
-//   const templateParams = {
-//     from_name: document.getElementById("user_name").value,
-//     email: document.getElementById("user_email").value,
-//     phone_number: document.getElementById("user_phone").value,
-//     order_details: "Selected Plan: " + document.getElementById("user_plan").value,
-//     shipping_address: "Gym Membership Signup"
-//   };
-
-//   emailjs
-//     .send("service_ngs68t5", "template_o9r9y24", templateParams)
-//     .then(() => {
-//       alert("Registration Successful! Details received.");
-//       joinForm.reset();
-//       modal.style.display = "none";
-//       submitBtn.innerText = "Submit Details";
-//       submitBtn.disabled = false;
-//     })
-//     .catch((error) => {
-//       alert("Failed to send message: " + JSON.stringify(error));
-//       submitBtn.innerText = "Submit Details";
-//       submitBtn.disabled = false;
-//     });
-// });
-
-
 // EmailJS Initialization
 (function () {
   emailjs.init("_BrC7wu4_hA-vmC5C");
@@ -195,3 +133,13 @@ joinForm.addEventListener("submit", function (e) {
       submitBtn.disabled = false;
     });
 });
+
+
+const menuToggle = document.getElementById("menuToggle");
+const navMenu = document.getElementById("navMenu");
+
+if (menuToggle) {
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+}
