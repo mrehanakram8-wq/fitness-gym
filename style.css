@@ -288,16 +288,21 @@ footer {
   .hero h2 {
     font-size: 32px;
   }
-  /* header, .navbar{
+  header, .header{
+    z-index: 99999 !important;
     position: relative;
-    display: flex;
+    /* display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
-  } */
+    padding: 15px 20px; */
+  }
+  .hero-content{
+    position: relative;
+    z-index: 1;
+  }
 
   .menu-toggle {
-    display: inline-block !important;
+    display: block !important;
     position: relative;
     z-index: 10002; 
     background: transparent;
@@ -311,8 +316,8 @@ footer {
 
   nav {
     display: flex !important;
-    position: fixed !important;
-    top: 0;
+    position: absolute !important;
+    top: 100%;
     left: 0;
     width: 25%;
     height: 50vh;
@@ -320,7 +325,7 @@ footer {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: 8px;
+    gap: 18px;
     z-index: 10001;
     padding: 80px 30px 30px 30px;
     /* Initially Hidden Off-Screen */
