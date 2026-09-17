@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MRA Fitness Gym</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- AUTH CONTAINER (Login + Sign Up Screens) -->
+<div id="authScreen" class="auth-screen">
+  
+  <!-- LOGIN BOX -->
+  <div id="loginBox" class="auth-box">
+    <h2>Login to MRA Fitness</h2>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Enter Email" required>
+      <input type="password" id="loginPassword" placeholder="Enter Password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p class="auth-toggle">Don't have an account? <a href="#" id="showSignup">Sign Up </a></p>
+  </div>
+
+  <!-- SIGN UP BOX (Initially Hidden) -->
+  <div id="signupBox" class="auth-box" style="display: none;">
+    <h2>Create Account</h2>
+    <form id="signupForm">
+      <input type="text" id="signupName" placeholder="Enter Full Name" required>
+      <input type="email" id="signupEmail" placeholder="Enter Email" required>
+      <input type="password" id="signupPassword" placeholder="Create Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <p class="auth-toggle">Already have an account? <a href="#" id="showLogin">Login </a></p>
+  </div>
+
+</div>
+
+<!-- MAIN WEBSITE CONTENT (Hidden Until Auth) -->
+<div id="mainContent" class="main-content" style="display: none;">
+
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo">
+        <span>MRA Fitness</span>
+      </div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <button id="logoutBtn" class="logout-btn">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Transform Your Body</h2>
+      <p>Join the best gym and achieve your fitness goals</p>
+      <button id="joinBtn">Join Now</button>
+    </div>
+  </section>
+
+  <!-- POPUP JOIN MODAL -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeBtn">&times;</span>
+      <h2>Join Gym</h2>
+
+      <form id="joinForm">
+        <input type="text" id="user_name" placeholder="Enter Full Name" required>
+        <input type="email" id="user_email" placeholder="Enter Email Address" required>
+        <input type="tel" id="user_phone" placeholder="Enter Phone Number" required>
+        
+        <select id="user_plan" required>
+          <option value="" disabled selected>Select Membership Plan</option>
+          <option value="Monthly (Rs.3000)">Monthly (Rs. 3,000)</option>
+          <option value="Quarterly (Rs.10000)">Quarterly (Rs. 10,000)</option>
+          <option value="Yearly (Rs.30000)">Yearly (Rs. 30,000)</option>
+        </select>
+
+        <button type="submit" id="submitBtn">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <section id="about" class="section container">
+    <h2>About Us</h2>
+    <p>We provide modern equipment, expert trainers, and a motivating environment.</p>
+  </section>
+
+  <section id="services" class="section container">
+    <h2>Our Services</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Weight Training</h3>
+        <p>Build strength with modern equipment</p>
+      </div>
+      <div class="card">
+        <h3>Cardio</h3>
+        <p>Improve stamina and endurance</p>
+      </div>
+      <div class="card">
+        <h3>Personal Training</h3>
+        <p>Get guidance from expert trainers</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section container">
+    <h2>Membership Plans</h2>
+    <div class="cards">
+      <div class="card price">
+        <h3>Monthly</h3>
+        <p>Rs.3000</p>
+      </div>
+      <div class="card price">
+        <h3>Quarterly</h3>
+        <p>Rs.10000</p>
+      </div>
+      <div class="card price">
+        <h3>Yearly</h3>
+        <p>Rs.30000</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section container">
+    <h2>Contact Us</h2>
+    <p>📞 0301-6407722</p>
+    <p>✉️ info@gym.com</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Rehan Fitness Gym</p>
+  </footer>
+
+</div>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script src="javascript.js"></script>
+
+</body>
+</html>

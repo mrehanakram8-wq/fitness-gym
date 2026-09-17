@@ -1,0 +1,512 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  letter-spacing: 4px;
+
+  color: whitesmoke;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.logo span {
+  font-size: 22px;
+  display: inline-block;
+  line-height: 1;
+}
+
+.logo-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ff3c00;
+}
+
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1554284126-aa88f22d8b74');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding-top: 60px;
+}
+
+.hero h2 {
+  font-size: 50px;
+}
+
+.hero p {
+  margin: 15px 0;
+}
+
+#joinBtn, button {
+  display: inline-block;
+  padding: 12px 25px;
+  border: none;
+  background: #ff3c00;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+#joinBtn:hover, button:hover {
+  background: #e03500;
+}
+
+
+.modal {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.modal.active {
+  display: flex !important;
+}
+
+.modal-content {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 15px rgba(255, 60, 0, 0.3);
+}
+
+.modal-content h2 {
+  color: #ff3c00;
+  margin-bottom: 15px;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+.section h2{
+  margin-bottom: 40px;
+}
+
+#joinForm input, #joinForm select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  background: #0f0f0f;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+}
+
+#joinForm button {
+  width: 100%;
+  margin-top: 15px;
+}
+
+
+.section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #1c1c1c;
+  padding: 25px;
+  border-radius: 10px;
+  width: 300px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.price {
+  border: 2px solid #ff3c00;
+}
+
+footer {
+  background: #000;
+  text-align: center;
+  padding: 15px;
+}
+
+@media(max-width:768px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  nav {
+    display: none;
+  }
+} */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* AUTHENTICATION SCREENS (LOGIN & SIGNUP) */
+.auth-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0f0f0f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.auth-box {
+  background: #1c1c1c;
+  padding: 35px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 60, 0, 0.3);
+}
+
+.auth-box h2 {
+  color: #ff3c00;
+  margin-bottom: 20px;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  background: #0f0f0f;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+}
+
+.auth-box button {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.auth-toggle {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.auth-toggle a {
+  color: #ff3c00;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* LOGOUT BUTTON */
+.logout-btn {
+  background: transparent !important;
+  border: 1px solid #ff3c00 !important;
+  padding: 6px 15px !important;
+  font-size: 14px !important;
+  margin-left: 15px;
+}
+
+.logout-btn:hover {
+  background: #ff3c00 !important;
+}
+
+/* HEADER & NAVBAR OVERLAY */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.logo span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff3c00;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ff3c00;
+}
+
+/* HERO SECTION */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1554284126-aa88f22d8b74');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding-top: 60px;
+}
+
+.hero h2 {
+  font-size: 50px;
+}
+
+.hero p {
+  margin: 15px 0;
+}
+
+/* BUTTONS */
+#joinBtn, button {
+  display: inline-block;
+  padding: 12px 25px;
+  border: none;
+  background: #ff3c00;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+#joinBtn:hover, button:hover {
+  background: #ec582b;
+  /* background: #000; */
+  
+  /* border: 1px solid black;  */
+}
+.section h2{
+  margin-bottom: 40px;
+}
+.auth-box p a{
+  margin-left: 10px;
+
+}
+.auth-box p a:hover{
+  /* margin-left: 20px; */
+  text-decoration: underline;
+}
+
+/* POPUP MODAL STYLES */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.active {
+  display: flex !important;
+}
+
+.modal-content {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 15px rgba(255, 60, 0, 0.3);
+}
+
+.modal-content h2 {
+  color: #ff3c00;
+  margin-bottom: 15px;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#joinForm input, #joinForm select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  background: #0f0f0f;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 5px;
+  outline: none;
+}
+
+#joinForm button {
+  width: 100%;
+  margin-top: 15px;
+}
+
+/* SECTIONS & CARDS */
+.section {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #1c1c1c;
+  padding: 25px;
+  border-radius: 10px;
+  width: 300px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.price {
+  border: 2px solid #ff3c00;
+}
+
+footer {
+  background: #000;
+  text-align: center;
+  padding: 15px;
+}
+
+@media(max-width:768px) {
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  nav {
+    display: none;
+  }
+}
